@@ -1,5 +1,6 @@
 // === External Modules === 
 const express = require('express');
+require('./config/db.connection');
 
 // === Global Variables ===
 const PORT = 4000;
