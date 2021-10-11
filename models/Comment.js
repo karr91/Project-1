@@ -3,13 +3,13 @@ const mongoose = require('mongoose');
 const commentSchema = new mongoose.Schema({
     comment: {
         type: String,
-        required [true, 'comment cannot be empty'],
-    }
-    photo: {
+        required: [true, 'comment cannot be empty'],
+    },
+    attachedPhoto: {
         type: mongoose.Types.ObjectId,
         ref: "Photo"
     }
-    }
+    },
     {timestamps: true}
 );
 
