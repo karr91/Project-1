@@ -4,6 +4,10 @@ const userSchema = new mongoose.Schema({
     name: {
         type: String,
         required: [true, 'name cannot be empty'],
-        unique: [true, 'user name must be unique']
+        unique: true
     }
 })
+
+const User = mongoose.model("User", userSchema);
+
+module.exports = User;

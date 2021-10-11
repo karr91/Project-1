@@ -12,4 +12,12 @@ const photoSchema = new mongoose.Schema({
         type: String,
         required : [true, 'image cannot be empty'],
     }
+    // user: {
+    //     type: mongoose.Types.ObjectId,
+    //     ref: "User",
+    // },
 });
+
+const Photo = mongoose.model("Photo", photoSchema);
+
+module.exports = Photo;
