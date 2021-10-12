@@ -5,13 +5,14 @@ const photoSchema = new mongoose.Schema({
         type: String,
         required: [true, 'photo name cannot be empty'],
     },
-    description: {
-        type: String,
-    },
     image: {
         type: String,
         required : [true, 'image cannot be empty'],
+    },
+    description: {
+        type: String,
     }
+    
     // user: {
     //     type: mongoose.Types.ObjectId,
     //     ref: "User",
