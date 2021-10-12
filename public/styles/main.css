@@ -1,15 +1,16 @@
 body {
-    background-color: darkslategray;
     display: flex;
-    flex-direction: column
+    flex-direction: column;
+    max-width: 100vw;
+    max-height: 100vh;
 }
-.navbar {
-    background-color: black;
+nav {
+    background-color: red;
 }
 .title-sec {
     display: flex;
-    
-    max-height: 15
+    max-height: 15vh;
+    justify-content: center;
 }
 .title-body {
     display: flex;
@@ -20,4 +21,16 @@ main {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-gap: 40px;
+}
+
+.addPhoto {
+    display: flex;
+    flex-direction: column;
+}
+
+.main-add {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center
 }
