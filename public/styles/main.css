@@ -1,0 +1,36 @@
+body {
+    display: flex;
+    flex-direction: column;
+    max-width: 100vw;
+    max-height: 100vh;
+}
+nav {
+    background-color: red;
+}
+.title-sec {
+    display: flex;
+    max-height: 15vh;
+    justify-content: center;
+}
+.title-body {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+main {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-gap: 40px;
+}
+
+.addPhoto {
+    display: flex;
+    flex-direction: column;
+}
+
+.main-add {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center
+}
