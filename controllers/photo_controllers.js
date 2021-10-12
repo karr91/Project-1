@@ -30,4 +30,19 @@ router.post('/', async(req,res) => {
     }
 });
 
+// === "Show" route for photos ===
+router.get('/:id', async(req,res) => {
+    try {
+        const photo = await Photo.findById(req.params.id);
+        const context = {
+            photo
+        };
+    return res.render('/photos/show.ejs',context);
+    } catch (error) {
+        console.log(error);
+        req.error = error;
+        return next();
+    }
+});
+
 module.exports = router
