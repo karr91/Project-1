@@ -1,0 +1,23 @@
+body {
+    background-color: darkslategray;
+    display: flex;
+    flex-direction: column
+}
+.navbar {
+    background-color: black;
+}
+.title-sec {
+    display: flex;
+    
+    max-height: 15
+}
+.title-body {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+main {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-gap: 40px;
+}
