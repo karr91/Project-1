@@ -16,8 +16,8 @@ router.get('/', async (req, res) => {
 });
 
 // === New photo route ====
-router.get('/newphoto', (req,res) => {
-    res.render('/photos/new.ejs');
+router.get('/new', (req,res) => {
+    res.render('new.ejs');
 });
 
 // === Post route for new photos ===
