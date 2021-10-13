@@ -1,0 +1,68 @@
+body {
+    max-height: 100vh;
+    max-width: 100vw;
+}
+.navbar {
+    background-color: whitesmoke;
+}
+
+/* Title section */
+.title-sec {
+    height: 10vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* index page */
+
+.indexShow {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+/* edit page */
+
+.showPhoto {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+
+.show {
+    height: 40vh;
+    width: 50vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* newpage */
+
+.main-add {
+    display: flex;
+    justify-content: center;
+}
+.addPhoto {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* edit page */
+
+.main-edit {
+    display: flex;
+    justify-content: center;
+}
+
+.edit {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.editPhoto {
+    display: flex;
+    flex-direction: column;
+}

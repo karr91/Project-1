@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include( '../partials/head.ejs' , {page: 'Edit Photo'} ) %>
+<body>
+    <%- include ( '../partials/nav') %>
+    <section class="title-sec">
+        <div class="title-body">
+            <p class="title">Edit <%= photo.name%></p>
+        </div>
+    </section>
+    <main class = "main-edit">
+        <div class = "edit">
+            <form action="/photos/<%= photo.id %>?_method=PUT" method="POST">
+                <fieldset class ="editPhoto">
+                    <label for="photoName">Name</label>
+                    <input type="text" id="photoName" placeholder="photo name" name="name" value = "<%= photo.name %>">
+                </fieldset>
+                <fieldset class ="editPhoto">
+                    <label for="imgURL">Photo URL</label>
+                    <input type="text" id="imgURL" placeholder="image@url.com" name="image" value = "<%= photo.image %>">
+                </fieldset>
+                <fieldset class ="editPhoto" >
+                    <label for="description">Description</label>
+                    <textarea id="description" type="text" name="description" cols=50 rows=10 value = "<%= photo.description %>"></textarea>
+                </fieldset class ="editPhoto">
+                    <button type="submit">Edit Photo</button>
+                </form>
+                <a class="button is-info" href="/photos/<%= photo.id %> ">Cancel</a>
+                <form action = "/photos/<%= photo.id %>?_method=DELETE" method="POST">
+                    <input class="button is-danger" type="submit" value="Delete Photo"/>  
+                </form>
+        </div>
+    </main>
+</body>
+</html>

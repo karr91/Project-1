@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- head -->
+<%- include( '../partials/head.ejs' , {page: 'Photos' } ) %>
+
+    <body>
+        <%- include ( '../partials/nav') %>
+        <section class="title-sec">
+            <div class="title-body">
+                <p class="title">photoExpress</p>
+            </div>
+        </section>
+        
+        <main>
+            <div class = "indexShow">
+                <% for(let idx=0; idx < photos.length; idx++) { %>
+                    <% const photo = photos[idx] %>
+
+                        <div>
+                            <article class="card">
+                                <section class="card-image">
+                                    <figure class="image is-10by10">
+                                        <img src="<%= photo.image %>" alt="Placeholder image" />
+                                    </figure>
+                                </section>
+                                <div class="card-content">
+                                    <div class="content">
+                                        <p>
+                                            <a href="/photos/<%= photo.id %>">
+                                                <%= photo.name %>
+                                            </a>
+                                        </p>
+                                    </div>
+                                </div>
+                            </article>
+                        </div>
+                <% } %>
+            </div>
+        </main>
+    </body>
+
+</html>

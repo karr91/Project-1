@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include( 'partials/head.ejs' , {page: 'Add Photo'} ) %>
+<body>
+    <%- include ( 'partials/nav') %>
+    <section class="title-sec">
+        <div class="title-body">
+            <p class="title">Add Photo</p>
+        </div>
+    </section>
+    <main class = "main-add">
+        <form action="/photos" method="POST">
+            <fieldset class ="addPhoto">
+                <label for="photoName">Name</label>
+                <input type="text" id="photoName" placeholder="photo name" name="name">
+                <label for="imgURL">Photo URL</label>
+                <input type="text" id="imgURL" placeholder="image@url.com" name="image">
+                <label for="description">Description</label>
+                <textarea id="description" type="text" name="description" cols=50 rows=10></textarea>
+                <button type="submit">Add Photo</button>
+            </fieldset>
+        </form>
+    </main>
+</body>
+</html>

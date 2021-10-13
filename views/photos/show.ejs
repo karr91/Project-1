@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include( '../partials/head.ejs' , {page: photo.name} ) %>
+
+    <body>
+        <%- include( '../partials/nav' ) %>
+            <section class="title-sec">
+                <div class="title-body">
+                    <p class="title">
+                        <%photo.name%>
+                    </p>
+                </div>
+            </section>
+            <main class="showPhoto">
+                <article class="show">
+                    <div>
+                        <img src="<%= photo.image %>" alt="Placeholder image" />
+                    </div>
+                    <div class=description>
+                        <p><%= photo.description%></p>
+                    </div>
+                    <div class="edit">
+                        <a class="button is-info" href="/photos/<%= photo.id %>/edit">Edit Photo</a>
+                    </div>
+                </article>
+                <article class = "comments">
+                    <div>
+                        <h2>Comments for <%= photo.name%></h2>
+                    </div>
+                    <div class ="commentForm">
+                        <form action= "/comments" method = "POST">
+                            <fieldset>
+                                <textarea class = "createComment" type="text" name = "comment" cols=50 rows=10></textarea>
+                                <input type = "hidden" value= "<%= photo.id%>" name = "photo">
+                                <button type="submit">Post Comment</button>
+                            </fieldset>
+                        </form>
+                    </div>
+                    <div class = "commentList">
+                        <% comment.forEach(comment => { %>
+                            <div>
+                                <p><%= comment.comment %></p>
+                            </div>
+                        <% }); %>
+                    </div>
+                </article>
+                </div>
+            </main>
+    </body>
+
+</html>
