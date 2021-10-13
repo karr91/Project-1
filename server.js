@@ -24,13 +24,13 @@ app.use((req, res, next) => {
 	next();
 });
 
+// === Controllers ===
+app.use("/photos", controllers.photo);
+
 // === Routes ===
 app.get('/', function (req, res) {
     res.redirect('/photos');
 });
-
-// === Controllers ===
-app.use("/photos", controllers.photo);
 
 // === 404 ===
 app.get("/*", (req, res) => {

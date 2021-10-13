@@ -46,7 +46,7 @@ router.get('/:id', async(req,res) => {
 // === Edit Route ===
 router.get('/:photoId/edit', async(req,res) => {
     try{
-        const photo = Photo.findById(req.params.photoId);
+        const photo = await Photo.findById(req.params.photoId);
         return res.render('photos/edit.ejs', {photo});
     } catch(error) {
         return console.log(error);
@@ -54,16 +54,18 @@ router.get('/:photoId/edit', async(req,res) => {
 });
 
 // === Update photo ====
-router.put('/:photoId', (req,res) => {
-    Photo.findByIdAndUpdate(
+router.put('/:photoId', async (req,res) => {
+    try {
+    console.log("here is" + req.params.photoId)
+    await Photo.findByIdAndUpdate(
         req.params.photoId,
-        {$set: req.body},
-        {new: true},
-        (error,updatedPhoto) => {
-            if(error) return console.log(error);
-            return res.redirect(`photos/:${updatedPhoto.id}`);
-        }
-    );
+        req.body,
+        {new: true});
+        res.redirect(`${req.params.photoId}`);
+    
+    } catch(error){
+        console.log(error)
+    }
 });
 
 // === Delete photo ===
