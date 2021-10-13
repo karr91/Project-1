@@ -37,12 +37,41 @@ router.get('/:id', async(req,res) => {
         const context = {
             photo
         };
-    return res.render('/photos/show.ejs',context);
+    return res.render('photos/show.ejs',context);
     } catch (error) {
         console.log(error);
         req.error = error;
         return next();
     }
+});
+
+// === Edit Route ===
+router.get('/:photoId/edit', async(req,res) => {
+    try{
+        const photo = Photo.findById(req.params.photoId);
+        return res.render('photos/edit.ejs', {photo});
+    } catch(error);
+});
+
+// === Update photo ====
+router.put('/:productId', (eq,res) =>{
+    Photo.findByIdAndUpdate(
+        req.params.photoId,
+        {$set: req.body},
+        {new: true},
+        (error,updatedPhoto) => {
+            if(error) return console.log(error);
+            return res.redirect(`/photos/${updatedPhoto.id}`);
+        }
+    );
+});
+
+// === Delete photo ===
+router.delete('/:photoId', (req,res) => {
+    Photo.findByIdAndDelete(req.params.photoId, (error,deletedPhoto) => {
+        if (error) return console.log(error);
+        return res.redirect('/photos')
+    });
 });
 
 module.exports = router
