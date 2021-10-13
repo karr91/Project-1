@@ -17,11 +17,6 @@ nav {
     justify-content: center;
     align-content: center;
 }
-main {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-gap: 40px;
-}
 
 .addPhoto {
     display: flex;
@@ -33,4 +28,9 @@ main {
     flex-direction: row;
     align-items: center;
     justify-content: center
+}
+
+.indexShow {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
 }
