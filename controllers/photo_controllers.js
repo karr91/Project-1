@@ -39,9 +39,7 @@ router.get('/:id', async(req,res) => {
         };
     return res.render('photos/show.ejs',context);
     } catch (error) {
-        console.log(error);
-        req.error = error;
-        return next();
+        return console.log(error);
     }
 });
 
@@ -50,7 +48,11 @@ router.get('/:photoId/edit', async(req,res) => {
     try{
         const photo = Photo.findById(req.params.photoId);
         return res.render('photos/edit.ejs', {photo});
-    } catch(error);
+    } catch(error) {
+        console.log(error);
+        req.error = error;
+        return next();
+    }
 });
 
 // === Update photo ====
