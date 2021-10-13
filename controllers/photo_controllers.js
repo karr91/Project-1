@@ -48,20 +48,13 @@ router.get('/:photoId/edit', async(req,res) => {
     try{
         const photo = Photo.findById(req.params.photoId);
         return res.render('photos/edit.ejs', {photo});
-<<<<<<< HEAD
     } catch(error) {
         return console.log(error);
     }
-=======
-    }
-    catch(error) {
-    return console.log(error);
-    }    
->>>>>>> 18e9254915fc878580656875d98a7d1303fb3e17
 });
 
 // === Update photo ====
-router.put('/:productId', (eq,res) =>{
+router.put('/:productId', (req,res) =>{
     Photo.findByIdAndUpdate(
         req.params.photoId,
         {$set: req.body},

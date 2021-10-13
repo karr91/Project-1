@@ -1,5 +1,6 @@
 // === External Modules === 
 const express = require('express');
+const methodOverride = require('method-override');
 require('./config/db.connection');
 
 // === Global Variables ===
@@ -15,6 +16,13 @@ app.set('view engine', 'ejs');
 // === Middleware ===
 app.use(express.static('public'));
 app.use(express.urlencoded({ extended: false }));
+app.use(methodOverride('_method'));
+
+/* == logger == */
+app.use((req, res, next) => {    
+    console.log(`[${req.url}] ${req.method} - ${new Date().toLocaleTimeString()}`);
+	next();
+});
 
 // === Routes ===
 app.get('/', function (req, res) {
