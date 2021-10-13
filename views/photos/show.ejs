@@ -31,6 +31,7 @@
                         <form action= "/comments" method = "POST">
                             <fieldset>
                                 <textarea class = "createComment" type="text" name = "comment" cols=50 rows=10></textarea>
+                                <input type = "hidden" value= "<%= photo.id%>" name = "photo">
                                 <button type="submit">Post Comment</button>
                             </fieldset>
                         </form>

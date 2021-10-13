@@ -35,6 +35,7 @@ router.get('/:id', async(req,res) => {
     try {
         const photo = await Photo.findById(req.params.id);
         const comment = await Comment.find({photo:req.params.id}).populate("photo");
+        console.log(comment)
         const context = {
             photo,
             comment,
