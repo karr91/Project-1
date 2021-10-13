@@ -70,6 +70,7 @@ router.put('/:productId', (eq,res) =>{
 router.delete('/:photoId', (req,res) => {
     Photo.findByIdAndDelete(req.params.photoId, (error,deletedPhoto) => {
         if (error) return console.log(error);
+        console.log(deletedPhoto)
         return res.redirect('/photos')
     });
 });
