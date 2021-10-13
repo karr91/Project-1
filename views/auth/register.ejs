@@ -1,7 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
-    <%- include( '../partials/head.ejs' , {page: 'Edit Photo'} ) %>
+    <%- include( '../partials/head.ejs' , {page: 'Register'} ) %>
 <body>
     <%- include ( '../partials/nav') %>
     <section class="title-sec">
         <div class="title-body">
+            <p class="title">New User</p>
+        </div>
+    </section>
+    <main class = "main-register">
+        <div class = "register">
+            <form action="/users" method="POST">
+                <fieldset class ="registerUser">
+                    <label for="userName">User Name</label>
+                    <input type="text" id="userName" placeholder="username" name="username" value = "<%= user.username %>">
+                </fieldset>
+                <fieldset class ="registerUser">
+                    <label for="password">Password</label>
+                    <input type="text" id="password" placeholder="*******" name="password" value = "<%= user.password %>">
+                </fieldset>
+                    <button type="submit">Edit Photo</button>
+                </form>
+                <a class="button is-info" href="/users/<%= user.id %> ">Cancel</a> 
+                </form>
+        </div>
+    </main>
