@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
-    <%- include( 'partials/head.ejs' , {page: 'Edit Photo'} ) %>
+    <%- include( '../partials/head.ejs' , {page: 'Edit Photo'} ) %>
 <body>
-    <%- include ( 'partials/nav') %>
+    <%- include ( '../partials/nav') %>
     <section class="title-sec">
         <div class="title-body">
             <p class="title">Edit Photo</p>
@@ -10,14 +10,14 @@
     </section>
     <main class = "main-edit">
         <div class = "edit">
-            <form action="/photo/<%photo.id $>?_method=PUT" method="POST">
+            <form action="/photos/<%photo.id %>?_method=PUT" method="POST">
                 <fieldset class ="editPhoto">
                     <label for="photoName">Name</label>
-                    <input type="text" id="photoName" placeholder="photo name" name="name">
+                    <input type="text" id="photoName" placeholder="photo name" name="name" value = "<%= photo.name %>">
                     <label for="imgURL">Photo URL</label>
-                    <input type="url" id="imgURL" placeholder="image@url.com" name="image">
+                    <input type="url" id="imgURL" placeholder="image@url.com" name="image" value = "<%= photo.image %>">
                     <label for="description">Description</label>
-                    <textarea id="description" type="text" name="description" cols=50 rows=10></textarea>
+                    <textarea id="description" type="text" name="description" cols=50 rows=10 value = "<%= photo.description %>"></textarea>
                     <button type="submit">Edit Photo</button>
                 </fieldset>
             </form>
