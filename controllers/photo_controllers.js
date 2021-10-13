@@ -54,14 +54,14 @@ router.get('/:photoId/edit', async(req,res) => {
 });
 
 // === Update photo ====
-router.put('/:productId', (req,res) =>{
+router.put('/:photoId', (req,res) => {
     Photo.findByIdAndUpdate(
         req.params.photoId,
         {$set: req.body},
         {new: true},
         (error,updatedPhoto) => {
             if(error) return console.log(error);
-            return res.redirect(`/photos/${updatedPhoto.id}`);
+            return res.redirect(`photos/:${updatedPhoto.id}`);
         }
     );
 });
