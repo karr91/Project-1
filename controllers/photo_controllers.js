@@ -34,8 +34,10 @@ router.post('/', async(req,res) => {
 router.get('/:id', async(req,res) => {
     try {
         const photo = await Photo.findById(req.params.id);
+        const comment = await Comment.find({photo:req.params.id}).populate("photo");
         const context = {
-            photo
+            photo,
+            comment,
         };
     return res.render('photos/show.ejs',context);
     } catch (error) {

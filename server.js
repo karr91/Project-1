@@ -26,6 +26,7 @@ app.use((req, res, next) => {
 
 // === Controllers ===
 app.use("/photos", controllers.photo);
+app.use("/comments", controllers.comment);
 
 // === Routes ===
 app.get('/', function (req, res) {
