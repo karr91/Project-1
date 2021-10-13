@@ -23,6 +23,26 @@
                         <a class="button is-info" href="/photos/<%= photo.id %>/edit">Edit Photo</a>
                     </div>
                 </article>
+                <article class = "comments">
+                    <div>
+                        <h2>Comments for <%= photo.name%></h2>
+                    </div>
+                    <div class ="commentForm">
+                        <form action= "/comments" method = "POST">
+                            <fieldset>
+                                <textarea class = "createComment" type="text" name = "comment" cols=50 rows=10></textarea>
+                                <input type = "hidden" value= "<%= photo.id%>" name = "photo">
+                                <button type="submit">Post Comment</button>
+                            </fieldset>
+                        </form>
+                    </div>
+                    <div class = "commentList">
+                        <% comment.forEach(comment => { %>
+                            <div>
+                                <p><%= comment.comment %></p>
+                            </div>
+                        <% }); %>
+                    </div>
                 </article>
                 </div>
             </main>
