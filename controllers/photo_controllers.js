@@ -56,8 +56,7 @@ router.get('/:photoId/edit', async(req,res) => {
 // === Update photo ====
 router.put('/:photoId', async (req,res) => {
     try {
-    console.log("here is" + req.params.photoId)
-    await Photo.findByIdAndUpdate(
+        await Photo.findByIdAndUpdate(
         req.params.photoId,
         req.body,
         {new: true});
@@ -69,12 +68,13 @@ router.put('/:photoId', async (req,res) => {
 });
 
 // === Delete photo ===
-router.delete('/:photoId', (req,res) => {
-    Photo.findByIdAndDelete(req.params.photoId, (error,deletedPhoto) => {
-        if (error) return console.log(error);
-        console.log(deletedPhoto)
-        return res.redirect('/photos')
-    });
+router.delete('/:photoId', async(req,res) => {
+    try {
+        await Photo.findByIdAndDelete(req.params.photoId);
+        return res.redirect('/photos');        
+    } catch(error){
+        console.log(error)
+    }
 });
 
 module.exports = router
