@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 require('dotenv').config();
-const connectionStr = process.env.MONGODB_URI || 'mongodb://localhost:27017/PhotoExpress';
+const connectionStr = process.env.MONGODB_URI || 'mongodb://localhost:27017/PhotoExpress2';
 
 mongoose.connect(connectionStr, {
     useNewUrlParser: true,
