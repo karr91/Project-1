@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include( '../partials/head.ejs' , {page: 'Login'} ) %>
+<body>
+    <%- include ( '../partials/nav') %>
+    <section class="title-sec">
+        <div class="title-body">
+            <p class="title">Login</p>
+        </div>
+    </section>
+    <main class = "main-register">
+        <div class = "register">
+            <form action="/login" method="POST">
+                <fieldset class ="registerUser">
+                    <label for="userName">User Name</label>
+                    <input type="text" id="userName" placeholder="username" name="username">
+                </fieldset>
+                <fieldset class ="registerUser">
+                    <label for="password">Password</label>
+                    <input type="text" id="password" placeholder="*******" name="password">
+                </fieldset>
+                    <button class = "loginButton" type="submit">Login</button>
+                </form>
+                </form>
+        </div>
+    </main>
