@@ -21,18 +21,20 @@ app.use(express.urlencoded({ extended: false }));
 app.use(methodOverride('_method'));
 app.use(
     session({
-      // where to store the sessions in mongodb
       store: MongoStore.create({ mongoUrl: process.env.MONGODB_URI }),
-      // secret key is used to sign every cookie to say its is valid
       secret: "super secret",
       resave: false,
       saveUninitialized: false,
-      // configure the expiration of the cookie
       cookie: {
-        maxAge: 1000 * 60 * 60 * 24 * 7 * 2, // two weeks
+        maxAge: 1000 * 60 * 60 * 24 * 7 * 2,
       },
     })
 );
+
+app.use(function (req, res, next) {
+  res.locals.user = req.session.currentUser;
+  next();
+});
 
 /* == logger == */
 app.use((req, res, next) => {    
