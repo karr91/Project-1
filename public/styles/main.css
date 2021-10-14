@@ -55,19 +55,32 @@ body {
     color: whitesmoke;
 }
 
-/* edit page */
+/*  page */
 
 .showPhoto {
-    display: flex;
-    justify-content: center;
-    align-content: center;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
 }
 
 .show {
     height: 40vh;
-    width: 50vh;
+    max-width: 50vh;
     display: flex;
     flex-direction: column;
+    justify-self: center;
+}
+
+.commentField {
+    display: flex;
+    flex-direction: column;
+}
+
+.commentPageText {
+    color: whitesmoke;
+}
+
+.comments {
+    justify-self: center;
 }
 
 /* newpage */
@@ -80,6 +93,15 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: center;
+}
+
+.addPhoto label {
+    color: whitesmoke;
+}
+
+#addButton {
+    background-color: rgba(25,150,227,0.5);
+    color: whitesmoke;
 }
 
 /* edit page */
@@ -98,4 +120,27 @@ body {
 .editPhoto {
     display: flex;
     flex-direction: column;
+}
+
+.editPhoto label {
+    color: whitesmoke;
+}
+
+.editButton {
+    height: 60px;
+    width: 100%;
+    border-radius: 1ex;
+}
+
+#edit {
+    background-color: rgba(25,150,227,0.5);
+    color: whitesmoke;
+}
+
+#cancel {
+    background-color: whitesmoke;
+}
+
+#delete {
+    background-color: rgba(232,0,31, 1)
 }
