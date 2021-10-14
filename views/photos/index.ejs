@@ -17,6 +17,7 @@
                     <% const photo = photos[idx] %>
 
                         <div>
+                            <a class = "linkBlock" href="/photos/<%= photo.id %>">
                             <article class="card">
                                 <section class="card-image">
                                     <figure class="image is-10by10">
@@ -25,14 +26,13 @@
                                 </section>
                                 <div class="card-content">
                                     <div class="content">
-                                        <p>
-                                            <a class = "picName" href="/photos/<%= photo.id %>">
+                                        <p class = "picName">
                                                 <%= photo.name %>
-                                            </a>
-                                        </p>
+                                            </p>
+                                        </div>
                                     </div>
-                                </div>
-                            </article>
+                                </article>
+                            </a>
                         </div>
                 <% } %>
             </div>

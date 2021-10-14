@@ -144,3 +144,32 @@ body {
 #delete {
     background-color: rgba(232,0,31, 1)
 }
+
+/* login page */
+
+.main-register {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.register form {
+    height: 20vh;
+    width: 20vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    
+}
+
+.registerUser label {
+    color: whitesmoke;
+}
+
+.loginButton {
+    width: 50%;
+    height: 20%;
+    background-color: rgba(25,150,227,0.5);
+    color: whitesmoke;
+}
