@@ -1,16 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
-    <%- include( '../partials/head.ejs' , {page: 'Register'} ) %>
+    <%- include( '../partials/head.ejs' , {page: 'Login'} ) %>
 <body>
     <%- include ( '../partials/nav') %>
     <section class="title-sec">
         <div class="title-body">
-            <p class="title">New User</p>
+            <p class="title">Login</p>
         </div>
     </section>
     <main class = "main-register">
         <div class = "register">
-            <form action="/register" method="POST">
+            <form action="/login" method="POST">
                 <fieldset class ="registerUser">
                     <label for="userName">User Name</label>
                     <input type="text" id="userName" placeholder="username" name="username">
@@ -19,7 +19,8 @@
                     <label for="password">Password</label>
                     <input type="text" id="password" placeholder="*******" name="password">
                 </fieldset>
-                    <button type="submit">Create User</button>
+                    <button type="submit">Login</button>
+                </form>
                 </form>
         </div>
     </main>

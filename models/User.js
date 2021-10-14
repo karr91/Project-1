@@ -6,11 +6,11 @@ const userSchema = new mongoose.Schema({
         required: [true, 'name cannot be empty'],
         unique: true
     },
-    passsword: {
+    password: {
         type: String,
         required: [true, 'you must enter a password']
-    },
-})
+    }
+});
 
 const User = mongoose.model("User", userSchema);
 
