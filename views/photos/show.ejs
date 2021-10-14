@@ -7,7 +7,7 @@
             <section class="title-sec">
                 <div class="title-body">
                     <p class="title">
-                        <%photo.name%>
+                        <%= photo.name%>
                     </p>
                 </div>
             </section>
@@ -17,8 +17,7 @@
                         <img src="<%= photo.image %>" alt="Placeholder image" />
                     </div>
                     <div class=description>
-                        <p>Posted by <%= photo.user %></p>
-                        <p><%= photo.description%></p>
+                        <p class = "commentPageText" ><%= photo.description%></p>
                     </div>
                     <div class="edit">
                         <a class="button is-info" href="/photos/<%= photo.id %>/edit">Edit Photo</a>
@@ -26,12 +25,12 @@
                 </article>
                 <article class = "comments">
                     <div>
-                        <h2>Comments for <%= photo.name%></h2>
+                        <h2 class = "commentPageText">Comments for <%= photo.name%></h2>
                     </div>
                     <div class ="commentForm">
                         <form action= "/comments" method = "POST">
-                            <fieldset>
-                                <textarea class = "createComment" type="text" name = "comment" cols=50 rows=10></textarea>
+                            <fieldset class = "commentField">
+                                <textarea class = "createComment" type="text" name = "comment" cols=72 rows=3></textarea>
                                 <input type = "hidden" value= "<%= photo.id%>" name = "photo">
                                 <button type="submit">Post Comment</button>
                             </fieldset>
@@ -40,7 +39,7 @@
                     <div class = "commentList">
                         <% comment.forEach(comment => { %>
                             <div>
-                                <p><%= comment.comment %></p>
+                                <p class = "commentPageText"><%= comment.comment %></p>
                             </div>
                         <% }); %>
                     </div>
@@ -50,3 +49,4 @@
     </body>
 
 </html>
+
