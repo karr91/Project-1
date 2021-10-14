@@ -14,6 +14,5 @@ module.exports = function navLinks(req, res, next) {
     } else {
       res.locals.routes = authRoutes;
     }
-    // locals
     next();
 };
