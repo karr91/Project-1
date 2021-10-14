@@ -1,6 +1,22 @@
 const express = require("express");
 const router = express.Router();
 const { Photo, Comment, User } = require("../models");
+const authRequired = (req, res, next) => {
+    if (req.session.currentUser) {
+      return next();
+    }
+  
+    return res.redirect("/login");
+};
+const userVerify = async (req,res,next) => {
+    const photo = await Photo.findById(req.params.photoId)
+    if(req.session.currentUser.id.toString() == photo.user._id) {
+        console.log(`lmao I'm inside`)
+        return next();
+    }
+    else{ return res.redirect("/login");
+    }
+};
 
 // === Index ===
 router.get('/', async (req, res) => {
@@ -16,14 +32,18 @@ router.get('/', async (req, res) => {
 });
 
 // === New photo route ====
-router.get('/new', (req,res) => {
+router.get('/new', authRequired, (req,res) => {
     res.render('new.ejs');
 });
 
 // === Post route for new photos ===
 router.post('/', async(req,res) => {
     try {
-        await Photo.create(req.body);
+        const context = {
+            ...req.body,
+            user: req.session.currentUser.id
+        }
+        await Photo.create(context);
         return res.redirect('/photos');
     } catch(error){
         return console.log(error);
@@ -47,7 +67,7 @@ router.get('/:id', async(req,res) => {
 });
 
 // === Edit Route ===
-router.get('/:photoId/edit', async(req,res) => {
+router.get('/:photoId/edit', authRequired, userVerify, async(req,res) => {
     try{
         const photo = await Photo.findById(req.params.photoId);
         return res.render('photos/edit.ejs', {photo});
