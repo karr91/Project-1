@@ -8,6 +8,10 @@ const commentSchema = new mongoose.Schema({
     photo: {
         type: mongoose.Types.ObjectId,
         ref: "Photo"
+    },
+    user: {
+        type: mongoose.Types.ObjectId,
+        ref: "User",
     }
     },
     {timestamps: true}
