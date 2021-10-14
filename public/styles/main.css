@@ -1,18 +1,34 @@
+html {
+    height: 100%;
+}
 body {
-    max-height: 100vh;
+    min-height: 100%;
     max-width: 100vw;
+    background-color: rgba(46, 31, 31, 1);
 }
 .navbar {
-    background-color: whitesmoke;
+    background-color: rgba(25,150,227,0.5)
+}
+
+.navbar-item {
+    color:whitesmoke;
+    font-weight: bold;
+    font-size: large;
 }
 
 /* Title section */
 .title-sec {
-    height: 10vh;
+    height: 20vh;
     width: 100vw;
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.title {
+    color: rgba(25,150,227,0.5);
+    padding: 10px;
+    font-size: 60px;
 }
 
 /* index page */
@@ -20,6 +36,23 @@ body {
 .indexShow {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 2em 2em;
+}
+
+.card {
+    background-color: rgba(25,150,227,0.5);
+}
+.card-content {
+    display: flex;
+    justify-content: center;
+}
+.content {
+    font-weight: bold;
+    font-size: large;
+}
+
+.picName {
+    color: whitesmoke;
 }
 
 /* edit page */
