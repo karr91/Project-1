@@ -8,6 +8,7 @@ require('./config/db.connection');
 // === Global Variables ===
 const PORT = process.env.PORT || 4000;
 const controllers = require("./controllers");
+const navLinks = require("./navLinks/navlinks.js");
 
 // === Express Dependency ===
 const app = express();
@@ -30,6 +31,7 @@ app.use(
       },
     })
 );
+app.use(navLinks);
 
 app.use(function (req, res, next) {
   res.locals.user = req.session.currentUser;
