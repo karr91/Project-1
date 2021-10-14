@@ -1,4 +1,5 @@
 body {
+    height: 100%;
     max-width: 100vw;
     background-color: rgba(46, 31, 31, 1);
 }
