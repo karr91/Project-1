@@ -33,7 +33,7 @@ router.get('/', async (req, res) => {
 
 // === New photo route ====
 router.get('/new', authRequired, (req,res) => {
-    res.render('new.ejs');
+    res.render('photos/new.ejs');
 });
 
 // === Post route for new photos ===
